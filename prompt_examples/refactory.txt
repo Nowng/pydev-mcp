@@ -1,0 +1,25 @@
+Use the `pydev-mcp` MCP tools to refactor the following part of the codebase: [DESCRIBE TARGET FOR REFACTORING].
+
+Follow these steps in order:
+
+1. **Baseline Establishment**:
+   - Use `pydev_list_directory` and `pydev_describe_workspace` to understand the current context.
+   - Run the existing test suite using `pydev_run_tests` to ensure a passing baseline.
+   - Run `pydev_profile` on the target logic to establish performance benchmarks.
+2. **Incremental Refactoring**:
+   - Read the target file using `pydev_read_text_file`.
+   - Apply refactoring changes incrementally using `pydev_edit_text_file`.
+   - After each major change, run `pydev_run_tests` to ensure no regressions were introduced.
+3. **Optimization & Type Check**:
+   - If performance was a goal, re-run `pydev_profile` and compare results with the baseline.
+   - Run `pydev_type_check` to ensure the refactored code is type-safe.
+4. **Validation**:
+   - Run `pydev_coverage` to ensure the refactoring hasn't resulted in any uncovered paths.
+   - Run `pydev_scan_security` to verify code integrity.
+5. **Documentation**:
+   - Update `doc/PROJECT-REPORT.md` with a "Refactoring Summary" including:
+     - Before vs. After performance metrics (from `pydev_profile`).
+     - Summary of changes made.
+     - Test results and coverage verification.
+
+Do not skip any step. Confirm the result of each step before proceeding to the next one.

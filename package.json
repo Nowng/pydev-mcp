@@ -1,0 +1,30 @@
+{
+  "name": "pydev-mcp",
+  "version": "5.0.0",
+  "description": "LM Studio plugin for trusted local Python tools",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx src/index.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "node test/run_tests.cjs",
+    "test:tools": "npm run build && node test/tools.test.cjs",
+    "postinstall": "node scripts/setupVenv.mjs",
+    "setup-venv": "node scripts/setupVenv.mjs --clean 2>/dev/null || node scripts/setupVenv.mjs",
+    "pretest": "npm run build"
+  },
+  "keywords": [],
+  "author": "soumyajit7038, hoonowng",
+  "license": "Apache-2.0",
+  "type": "commonjs",
+  "dependencies": {
+    "@lmstudio/sdk": "^1.5.0",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.9.5",
+    "tsx": "^4.23.12",
+    "typescript": "^6.0.3",
+    "vite": "^6.4.3"
+  }
+}

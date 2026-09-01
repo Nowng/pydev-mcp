@@ -1,0 +1,21 @@
+Use the `pydev-mcp` MCP tools to perform security hardening on the codebase based on the following priority: [INSERT SECURITY GOALS].
+
+Follow these steps in order:
+
+1. **Vulnerability Scan**:
+   - Run `pydev_scan_security` across the entire workspace.
+   - Review the findings, specifically focusing on `HIGH` and `MEDIUM` severity issues.
+2. **Triage & Repair**:
+   - For each identified high-severity issue:
+     - Read the affected file using `pydev_read_text_file`.
+     - Apply a security fix using `pydev_edit_text_file`.
+     - Run `pydev_run_linter_and_formatter_in_file` to verify the fix.
+3. **Verification**:
+   - Run `pydev_run_tests` to ensure security patches haven't introduced functional regressions.
+   - Re-run `pydev_scan_security` to confirm the specific vulnerabilities are resolved.
+4. **Reporting**:
+   - Create `doc/PROJECT-REPORT.md` with a "Security Audit" section:
+     - List all resolved vulnerabilities.
+     - Document any remaining `LOW` or `INFO` issues with justifications for delayed fixes.
+
+Do not skip any step. Confirm the result of each step before proceeding to the next one.

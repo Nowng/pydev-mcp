@@ -1,0 +1,31 @@
+Use the `pydev-mcp` MCP tools to develop a new Python program based on the following requirements: [INSERT REQUIREMENTS HERE].
+
+Follow these steps in order:
+
+1. **Setup & Initialization**:
+   - Call `pydev_get_setup_status` to verify the environment. Run `pydev_setup_venv` if necessary.
+   - Create a project scaffold using `pydev_create_project_structure` with a project name derived from the requirements.
+2. **Discovery & Dependency Sync**:
+   - List the directory structure to understand the scaffold.
+   - Identify required third-party libraries from the requirements and use `pydev_analyze_imports_and_dependencies` followed by `pydev_install_module`.
+   - Generate a `requirements.txt` file.
+3. **Implementation**:
+   - Implement the solution in `src/` (e.g., `projectName/src/main.py`). 
+   - **Rule**: Always use `pydev_read_text_file` before any modification.
+   - Save files using `pydev_save_text_file` with the full project-relative path.
+   - Run `pydev_run_linter_and_formatter_in_file` and fix all issues automatically.
+4. **Testing & Quality**:
+   - Generate a test skeleton using `pydev_create_test_file` for the main entry points.
+   - Implement unit tests in the `tests/` directory.
+   - Execute tests using `pydev_run_tests` and ensure all pass.
+5. **Audit & Reporting**:
+   - Run `pydev_coverage` to ensure line coverage meets the target.
+   - Run `pydev_scan_security` to identify vulnerabilities.
+   - Run `pydev_type_check` to verify type hints.
+6. **Documentation**:
+   - Create `doc/MAINTENANCE.md` containing the architecture and module responsibilities.
+   - Create `doc/PROJECT-REPORT.md` summarizing the results of the tests, coverage, security scan, and linter output.
+7. **Packaging**:
+   - Build the distribution artifacts using `pydev_build_python_package`.
+
+Do not skip any step. Confirm the result of each step before proceeding to the next one.

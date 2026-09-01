@@ -1,0 +1,22 @@
+Use the `pydev-mcp` MCP tools to identify and resolve performance bottlenecks in the following module: [DESCRIBE MODULE AND PERFORMANCE ISSUE].
+
+Follow these steps in order:
+
+1. **Baseline Profiling**:
+   - Run `pydev_profile` on the target module to identify "hotspot" functions (high total or cumulative time).
+   - Use `pydev_run_code` to execute specific logic with timing scripts to confirm the slowest components.
+2. **Isolation & Analysis**:
+   - Analyze the identified bottleneck functions using `pydev_read_text_file`.
+   - Identify the root cause (e.g., inefficient loops, redundant I/O, high complexity algorithms).
+3. **Optimization**:
+   - Implement optimizations using `pydev_edit_text_file` (e.g., using list comprehensions, caching, or more efficient data structures).
+   - Run `pydev_run_linter_and_formatter_in_file` to ensure the new code remains clean.
+4. **Verification**:
+   - Re-run `pydev_profile` and compare the results against the baseline.
+   - Run `pydev_run_tests` to ensure that performance optimizations did not break existing functionality.
+5. **Documentation**:
+   - Create `doc/PROJECT-REPORT.md` including a "Performance Optimization" section with:
+     - Before vs. After profiling logs.
+     - Summary of specific algorithmic changes and the resulting speedup/resource reduction.
+
+Do not skip any step. Confirm the result of each step before proceeding to the next one.

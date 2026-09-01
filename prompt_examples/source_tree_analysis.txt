@@ -1,0 +1,27 @@
+Use the `pydev-mcp` MCP tools to perform a comprehensive audit and architecture analysis of the existing codebase.
+
+Follow these steps in order:
+
+1. **Environment Verification**:
+   - Call `pydev_get_workspace_root` and `pydev_get_setup_status` to confirm the active environment.
+2. **Codebase Discovery**:
+   - Use `pydev_list_directory` recursively to map the entire project structure.
+   - Use `pydev_find_files` to identify all Python source files.
+   - Use `pydev_describe_workspace` to get a high-level overview of purposes and dependencies.
+3. **Deep Analysis**:
+   - Search for key definitions and entry points using `pydev_search_directory`.
+   - Use `pydev_audit_docstrings` to identify missing or stale documentation.
+   - Use `pydev_analyze_imports_and_dependencies` on core modules to check for missing packages.
+4. **Health & Security Audit**:
+   - Run `pydev_check_for_bugs_in_file` on core source files.
+   - Run `pydev_scan_security` across the entire target path.
+   - Run `pydev_type_check` to identify type inconsistencies.
+5. **Reporting**:
+   - Create `doc/AUDIT-REPORT.md` which must include:
+     - A high-level architecture summary.
+     - A list of all identified modules and their responsibilities.
+     - A summary of security vulnerabilities (High/Medium/Low).
+     - A report on docstring coverage and missing type hints.
+     - A summary of any missing dependencies found during analysis.
+
+Do not modify any source code during this process. Confirm the result of each step before proceeding to the next one.

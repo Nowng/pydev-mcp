@@ -1,0 +1,21 @@
+Use the `pydev-mcp` MCP tools to rework the following function/logic in the existing codebase: [DESCRIBE FUNCTION AND ISSUE/REQUIREMENT].
+
+Follow these steps in order:
+
+1. **Baseline & Reproduction**:
+   - Identify the target file and use `pydev_read_text_file` to read its content.
+   - Create a reproduction test script in `tests/` that fails given the current implementation.
+   - Run `pydev_run_tests` to confirm the failure.
+2. **Diagnosis**:
+   - Use `pydev_run_with_debugger` on the reproduction script to inspect local variables and the call stack to identify the root cause.
+3. **Implementation & Rework**:
+   - Apply the fix or rework using `pydev_edit_text_file` or `pydev_edit_text_file_by_line`.
+   - After each edit, run `pydev_run_tests` to verify the fix.
+   - Run `pydev_run_linter_and_formatter_in_file` to ensure the new code meets style standards.
+4. **Quality Assurance**:
+   - Run `pydev_type_check` on the affected module.
+   - Run `pydev_scan_security` to ensure the fix doesn't introduce new vulnerabilities.
+5. **Documentation**:
+   - Update `doc/PROJECT-REPORT.md` to include a "Defect Resolution" section, quoting the debugger output (if relevant) and the final test results.
+
+Do not skip any step. Confirm the result of each step before proceeding to the next one.

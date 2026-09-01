@@ -1,0 +1,19 @@
+Use the `pydev-mcp` MCP tools to improve the test coverage of the project, targeting a minimum of [X]% coverage.
+
+Follow these steps in order:
+
+1. **Coverage Audit**:
+   - Run `pydev_coverage` to generate a coverage report and identify files/lines with low coverage.
+2. **Gap Analysis**:
+   - For the lowest-scoring modules, use `pydev_list_directory` and `pydev_read_text_file` to understand the logic paths.
+   - Identify specific branches or edge cases that are currently not exercised by tests.
+3. **Test Implementation**:
+   - Use `pydev_create_test_file` to generate skeletons for the missing modules.
+   - Implement new test cases in `tests/` to cover the identified gaps.
+   - Run `pydev_run_tests` to verify the new tests pass.
+4. **Verification**:
+   - Re-run `pydev_coverage` to confirm that the new tests have successfully increased the coverage percentage.
+5. **Documentation**:
+   - Update `doc/PROJECT-REPORT.md` with a "Coverage Improvement" summary, showing the coverage percentage before and after the expansion.
+
+Do not skip any step. Confirm the result of each step before proceeding to the next one.

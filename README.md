@@ -1,3 +1,5 @@
+![professor_headache](https://github.com/Nowng/pydev-mcp/blob/main/professor_headache.jpg)
+
 # pydev-mcp
 
 `pydev-mcp` gives LM Studio local models tools for trusted local Python work: run code, manage files, install packages, and check / lint / test code on your own machine.
